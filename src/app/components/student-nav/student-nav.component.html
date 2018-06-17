@@ -1,0 +1,22 @@
+<nav>
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo"> Open Exams</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/history']" routerLinkActive="active">History</a></li>
+        <li><a [routerLink]="['/register_exam']" routerLinkActive="active">Register for exam</a></li>
+        <li><a [routerLink]="['/register_exam_repeat']" routerLinkActive="active">Register for repeat exam</a></li>
+        <li><a [routerLink]="['/home']" routerLinkActive="active">Current Registrations</a></li>
+        <li><a class="waves-effect waves-light btn">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a [routerLink]="['/history']" routerLinkActive="active">History</a></li>
+    <li><a [routerLink]="['/register_exam']" routerLinkActive="active">Register for exam</a></li>
+    <li><a [routerLink]="['/register_exam_history']" routerLinkActive="active">Register for repeat exam</a></li>
+    <li><a [routerLink]="['/home']" routerLinkActive="active">Current Registrations</a></li>
+    <li><a class="waves-effect waves-light btn" routerLinkActive="active">Logout</a></li>
+
+  </ul>

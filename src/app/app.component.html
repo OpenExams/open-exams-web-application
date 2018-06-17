@@ -1,0 +1,10 @@
+<app-loading></app-loading>
+<app-student-nav *ngIf="_studentAuthService.loggedIn()"></app-student-nav>
+<app-staff-nav *ngIf="_memberAuthService.loggedIn()"></app-staff-nav>
+<div *ngIf="_memberAuthService.loggedIn() || _studentAuthService.loggedIn() ; else elseBlock" class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #elseBlock>
+  <router-outlet></router-outlet>
+</ng-template>
