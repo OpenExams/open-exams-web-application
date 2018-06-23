@@ -12,3 +12,6 @@ width: 100%;
 fullwidth{
   widows: 100%;
 }
+p {
+  color: red;
+}

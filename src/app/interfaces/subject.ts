@@ -7,4 +7,5 @@ export interface ISubject {
   stream: String;
   repeat_students: Number;
   students: Number;
+  session_timeout: boolean;
 }

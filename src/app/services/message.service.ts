@@ -5,7 +5,7 @@ export class MessageService {
   message = 'Loading';
   loading = false;
   fail = false;
-  success = true;
+  success = false;
   constructor() { }
 
   load(message) {

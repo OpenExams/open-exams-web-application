@@ -1,21 +1,21 @@
 <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"> Open Exams</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Subjects</a></li>
-        <li><a href="#">Students</a></li>
-        <li><a href="#"></a>dashboard</li>
-        <li><a class="waves-effect waves-light btn">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper container">
+    <a href="#!" class="brand-logo"> Open Exams</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['/students']" routerLinkActive="active">Students</a></li>
+      <li><a [routerLink]="['/subjects']" routerLinkActive="active">Subjects</a></li>
+      <li><a [routerLink]="['/member_home']" routerLinkActive="active">Exams</a></li>
+      <li><a (click)="logOut()" class="waves-effect waves-light btn">Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="#!" class="sidenav-close"><i class="material-icons">arrow_back</i></a></li>
-    <li><a href="#">Subjects</a></li>
-    <li><a href="#">Students</a></li>
-    <li><a href="#"></a>dashboard</li>
-    <li><a class="waves-effect waves-light btn">Logout</a></li>
-    
-  </ul>
+<ul class="sidenav" id="mobile-demo">
+  <li><a [routerLink]="['/history']" routerLinkActive="active">History</a></li>
+  <li><a [routerLink]="['/register_exam']" routerLinkActive="active">Register for exam</a></li>
+  <li><a [routerLink]="['/register_exam_history']" routerLinkActive="active">Register for repeat exam</a></li>
+  <li><a [routerLink]="['/home']" routerLinkActive="active">Upcomming Exams</a></li>
+  <li><a (click)="logOut()" class="waves-effect waves-light btn" routerLinkActive="active">Logout</a></li>
+
+</ul>

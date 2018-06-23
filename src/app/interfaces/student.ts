@@ -41,4 +41,5 @@ export interface IStudent {
       semester_2: [{name: string; code: string; }]
     };
   };
+  session_timeout: boolean;
 }

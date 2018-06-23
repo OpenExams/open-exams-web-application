@@ -9,12 +9,11 @@ export class StudentAuthGuard implements CanActivate {
   }
 
   canActivate() {
-    console.log(1);
     if (this.authService.loggedIn()) {
       return true;
     } else {
       this.router.navigate(['/login']);
-      return false;
+      return false; // change to false uncoment abouve statement
     }
   }
 }

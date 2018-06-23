@@ -1,3 +1,29 @@
-<p>
-  login-staff works!
-</p>
+<div id="login_container" class="valign-wrapper">
+    <div class="row fullwidth">
+        <div class="col s12 m12">
+          <div class="card login-wrapper">
+            <div class="card-content">
+              <h4 class="center">Login</h4>
+              <div class="input-field">
+                <label for="Student ID" class="">
+                  Staff ID
+                </label>
+                <input  [(ngModel)]="username" type="text" />
+              </div>
+              <div class="input-field">
+                  <label for="Password" class="">
+                    Password
+                  </label>
+                  <input  [(ngModel)]="password" type="password" />
+              </div>
+              <p>
+                {{message}}
+              </p>
+              <a  (click)="onLoginSubmit()" id="login_button" class="waves-effect waves-light btn-large"> Sign In </a>
+              <a [routerLink]="['/login']" id="RecoverPassword">Student login -></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

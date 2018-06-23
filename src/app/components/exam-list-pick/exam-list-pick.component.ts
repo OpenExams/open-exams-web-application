@@ -12,7 +12,9 @@ export class ExamListPickComponent implements OnInit {
   @Input() public selectedSubjects;
   @Input() public studentYear;
   @Input() public studentSemester;
-  @Output() public subjectStateChanged = new EventEmitter();
+  @Input() public heading1;
+  @Input() public heading2;
+  @Input() public show;
   @Output() public registerEvent = new EventEmitter();
   constructor() { }
 
@@ -24,7 +26,6 @@ export class ExamListPickComponent implements OnInit {
   // }
 
   toggleEvent(event) {
-    this.subjectStateChanged.emit({subjectId: event.target.id, checked: event.target.checked});
     if (event.target.checked) {
       const index = _.findIndex(this.unselectedSubjects, o => o._id === event.target.id );
       const subject = _.pullAt(this.unselectedSubjects, index);

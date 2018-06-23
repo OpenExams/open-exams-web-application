@@ -9,16 +9,24 @@ import { LoginStudentComponent } from './pages/login-student/login-student.compo
 
 import { StudentAuthGuard } from './guards/student-auth.guard';
 import { LoginStaffComponent } from './pages/login-staff/login-staff.component';
+import { StaffStudentComponent } from './pages/staff-student/staff-student.component';
+import { StaffHomeComponent } from './pages/staff-home/staff-home.component';
+import { StaffReportComponent } from './pages/staff-report/staff-report.component';
+import { MemberAuthGuard } from './guards/member-auth.guard';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  //  { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
-  {path: 'home', component: StudentHomeComponent},
+  {path: '',   redirectTo: '/home', pathMatch: 'full' },
+  {path: 'home', component: StudentHomeComponent, canActivate: [StudentAuthGuard]},
   {path: 'history', component: StudentExamHistoryComponent, canActivate: [StudentAuthGuard]},
-  {path: 'register_exam', component: StudentRegisterExamComponent},
-  {path: 'register_exam_repeat', component: StudentRegisterRepeatExamComponent},
+  {path: 'register_exam', component: StudentRegisterExamComponent, canActivate: [StudentAuthGuard]},
+  {path: 'register_exam_repeat', component: StudentRegisterRepeatExamComponent, canActivate: [StudentAuthGuard]},
   {path: 'login', component: LoginStudentComponent },
-  {path: 'member-login', component: LoginStaffComponent}
-  {path: '**', component: StudentHomeComponent}
+  {path: 'member-login', component: LoginStaffComponent},
+  {path: 'member_home', component: StaffHomeComponent, canActivate: [MemberAuthGuard]},
+  {path: 'students', component: StaffStudentComponent, canActivate: [MemberAuthGuard]},
+  {path: 'subjects', component: StaffReportComponent, canActivate: [MemberAuthGuard]},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

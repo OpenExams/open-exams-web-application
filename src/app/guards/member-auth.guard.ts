@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Router, CanActivate } from '@angular/router';
+import { MemberAuthService } from '../services/member-auth.service';
 
 @Injectable()
 export class MemberAuthGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return true;
+  constructor (private authService: MemberAuthService, private router: Router) {
+
+  }
+
+  canActivate() {
+    if (this.authService.loggedIn()) {
+      return true;
+    } else {
+      this.router.navigate(['/member-login']);
+      return false; // change to false uncoment abouve statement
+    }
   }
 }

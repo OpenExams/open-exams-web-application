@@ -8,16 +8,18 @@
               <label for="Student ID" class="">
                 Student Id
               </label>
-              <input type="text" />
+              <input  [(ngModel)]="username" type="text" />
             </div>
             <div class="input-field">
                 <label for="Password" class="">
                   Password
                 </label>
-                <input type="password" />
+                <input  [(ngModel)]="password" type="password" />
             </div>
-
-            <a id="login_button" class="waves-effect waves-light btn-large"> Sign In </a>
+            <p>
+              {{message}}
+            </p>
+            <a  (click)="onLoginSubmit()" id="login_button" class="waves-effect waves-light btn-large"> Sign In </a>
             <a [routerLink]="['/member-login']" id="RecoverPassword">Member login -></a>
         </div>
       </div>

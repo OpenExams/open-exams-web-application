@@ -1,7 +1,7 @@
-<div class="section">
+<div class="section" *ngIf="show ; else elseBlock" >
 	<div class="row">
 		<div class="col s12">
-      <h4 class="header">Pick subjects to register</h4>
+      <h4 class="header">{{heading1}}</h4>
       <div *ngFor="let subject of unselectedSubjects; index as i" class="card">
         <div class="card-content row">
               <div class="col s1">
@@ -20,13 +20,13 @@
 		</div>
 	</div>
 </div>
-<div class="divider"></div>
-<div class="section">
+<div class="divider" *ngIf="show"></div>
+<div class="section" *ngIf="show">
 	<div class="row">
 	  	<div class="col s12">
 	  	  	<div class="row">
             <div class="col s6">
-              <h4 class="header">Subjects picked to register</h4>
+              <h4 class="header">{{heading2}}</h4>
             </div>
             <div class="col s6">
               <a (click)="registerButtonClick($event)" class="waves-effect waves-light btn-large">Register</a>
@@ -51,3 +51,8 @@
 	  	</div>
 	</div>
 </div>
+
+
+<ng-template #elseBlock>
+  <p>This page does not apply to you</p>
+</ng-template>
